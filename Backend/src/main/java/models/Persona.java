@@ -5,21 +5,23 @@ public class Persona {
     private String nombre;
     private String apellido;
     private String correo;
-    private String contrasenia;
+    private String clave;
     private String telefono;
     private String dni;
+    private String token;
 
     public Persona() {
     }
 
-    public Persona(Integer idPersona, String nombre, String apellido, String correo, String contrasenia, String telefono, String dni) {
+    public Persona(Integer idPersona, String nombre, String apellido, String correo, String clave, String telefono, String dni) {
         this.idPersona = idPersona;
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
-        this.contrasenia = contrasenia;
+        this.contrasenia = clave;
         this.telefono = telefono;
         this.dni = dni;
+        this.token = token;
     }
 
     public Integer getIdPersona() {
@@ -54,6 +56,14 @@ public class Persona {
         this.correo = correo;
     }
 
+    public String getContrasenia() {
+        return this.contrasenia;
+    }
+
+    public void setContrasenia(String contrasenia) {
+        this.contrasenia = contrasenia;
+    }
+
     public String getTelefono() {
         return this.telefono;
     }
@@ -68,6 +78,14 @@ public class Persona {
 
     public void setDni(String dni) {
         this.dni = dni;
+    }
+
+    public String getToken() {
+        return this.token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
     }
 
 }

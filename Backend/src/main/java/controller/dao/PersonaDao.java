@@ -4,7 +4,9 @@ import controller.dao.implement.AdapterDao;
 import controller.tda.list.LinkedList;
 import controller.tda.list.ListEmptyException;
 import models.Persona;
+import java.util.Optional;
 import org.mindrot.jbcrypt.BCrypt;
+import controller.dao.RolDao;
 import controller.dao.TokenUtil;
 
 public class PersonaDao extends AdapterDao<Persona> {
@@ -93,10 +95,10 @@ public class PersonaDao extends AdapterDao<Persona> {
         Persona[] personas = list.toArray();
         for (Persona persona : personas) {
             if (persona.getCorreo().equals(correo) || persona.getDni().equals(dni)) {
-                return false; // Correo o DNI no son únicos
+                return false; // No son únicos
             }
         }
 
-        return true; // Correo y DNI son únicos
+        return true; // Son únicos
     }
 }
