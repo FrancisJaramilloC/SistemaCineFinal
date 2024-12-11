@@ -3,10 +3,10 @@ package controller.TDA.queue;
 import controller.TDA.list.ListEmptyException;
 import controller.TDA.list.OverFlowException;
 import controller.TDA.list.LinkedList;
-public class QueueOperation <E> extends LinkedList<E>{
+public class queueOperation <E> extends LinkedList<E>{
     private Integer top;
 
-    public QueueOperation(Integer top ) {
+    public queueOperation(Integer top ) {
         this.top = top;
     }
 

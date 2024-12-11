@@ -18,7 +18,7 @@ public class Persona {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
-        this.contrasenia = clave;
+        this.clave = clave;
         this.telefono = telefono;
         this.dni = dni;
         this.token = token;
@@ -56,12 +56,12 @@ public class Persona {
         this.correo = correo;
     }
 
-    public String getContrasenia() {
-        return this.contrasenia;
+    public String getClave() {
+        return this.clave;
     }
 
-    public void setContrasenia(String contrasenia) {
-        this.contrasenia = contrasenia;
+    public void setClave(String clave) {
+        this.clave = clave;
     }
 
     public String getTelefono() {

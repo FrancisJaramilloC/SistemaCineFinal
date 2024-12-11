@@ -12,24 +12,24 @@ public class PeliculaDao extends AdapterDao<Pelicula> {
     private Pelicula pelicula;
     private LinkedList<Pelicula> listAll;
 
-    public ProyectoDaoU() {
-        super(Proyecto.class);
+    public PeliculaDao() {
+        super(Pelicula.class);
     }
 
-    public Proyecto getProyecto() {
+    public Pelicula getPelicula() {
         if (pelicula == null) {
             pelicula = new Pelicula();
         }
-        return this.proyecto;
+        return this.pelicula;
     }
     
     public void setPelicula(Pelicula pelicula) {
         this.pelicula = pelicula;
     }
 
-    public linkedList<Proyecto> getListAll() {
+    public LinkedList<Pelicula> getListAll() {
         if(this.listAll == null) {
-            this.listAll = ListAll();
+            this.listAll = listAll();
         }
         return this.listAll;
     }
@@ -42,7 +42,7 @@ public class PeliculaDao extends AdapterDao<Pelicula> {
     }
 
     public Boolean update() throws Exception {
-        this.merge(getPelicula(), getPelicula().getIdpelicula() - 1);
+        this.merge(getPelicula(), getPelicula().getIdPelicula() - 1);
         this.listAll = listAll();
         return true;
     }

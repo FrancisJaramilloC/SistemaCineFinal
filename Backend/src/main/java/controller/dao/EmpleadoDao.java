@@ -6,43 +6,43 @@ import java.util.Arrays;
 
 import controller.TDA.list.LinkedList;
 import controller.TDA.list.ListEmptyException;
-import models.Pelicula;
+import models.Empleado;
 
-public class PeliculaDao extends AdapterDao<Pelicula> {
-    private Pelicula pelicula;
-    private LinkedList<Pelicula> listAll;
+public class EmpleadoDao extends AdapterDao<Empleado> {
+    private Empleado Empleado;
+    private LinkedList<Empleado> listAll;
 
-    public ProyectoDaoU() {
-        super(Proyecto.class);
+    public EmpleadoDao() {
+        super(Empleado.class);
     }
 
-    public Proyecto getProyecto() {
-        if (pelicula == null) {
-            pelicula = new Pelicula();
+    public Empleado getEmpleado() {
+        if (Empleado == null) {
+            Empleado = new Empleado();
         }
-        return this.proyecto;
+        return this.Empleado;
     }
     
-    public void setPelicula(Pelicula pelicula) {
-        this.pelicula = pelicula;
+    public void setEmpleado(Empleado Empleado) {
+        this.Empleado = Empleado;
     }
 
-    public linkedList<Proyecto> getListAll() {
+    public LinkedList<Empleado> getListAll() {
         if(this.listAll == null) {
-            this.listAll = ListAll();
+            this.listAll = listAll();
         }
         return this.listAll;
     }
 
     public Boolean save() throws Exception {
         Integer id = getListAll().getSize() + 1;
-        getPelicula().setIdPelicula(id);
-        persist(getPelicula());
+        getEmpleado().setIdEmpleado(id);
+        persist(getEmpleado());
         return true;
     }
 
     public Boolean update() throws Exception {
-        this.merge(getPelicula(), getPelicula().getIdpelicula() - 1);
+        this.merge(getEmpleado(), getEmpleado().getIdEmpleado() - 1);
         this.listAll = listAll();
         return true;
     }
