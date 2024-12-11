@@ -1,14 +1,16 @@
 package controller.dao.services;
 
-import controller.dao.PeliculaDao;
+import controller.dao.EmpleadoDao;
 import controller.TDA.list.LinkedList;
-import models.Pelicula;
+import models.Empleado;
 import controller.TDA.list.ListEmptyException;
 
-public class PeliculaServices {
-    private PeliculaDao obj;
-    public ProyectoServices() {
-        obj = new PeliculaDao();
+
+public class EmpleadoServices {
+    private EmpleadoDao obj;
+
+    public EmpleadoServices() {
+        obj = new EmpleadoDao();
     }  
 
     public Boolean save() throws Exception {
@@ -19,19 +21,19 @@ public class PeliculaServices {
         return obj.update();
     }
 
-    public LinkedList<Proyecto> listAll() {
+    public LinkedList<Empleado> listAll() {
         return obj.getListAll();
     }
 
-    public Proyecto getProyecto() {
-        return obj.getProyecto();
+    public Empleado getEmpleado() {
+        return obj.getEmpleado();
     }
 
-    public void setProyecto(Proyecto proyecto) {
-        obj.setProyecto(proyecto);
+    public void setEmpleado(Empleado Empleado) {
+        obj.setEmpleado(Empleado);
     }
 
-    public Proyecto get(Integer id) throws Exception {
+    public Empleado get(Integer id) throws Exception {
         return obj.get(id);
     }
 }

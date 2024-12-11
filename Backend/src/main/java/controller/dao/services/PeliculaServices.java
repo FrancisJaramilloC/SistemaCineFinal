@@ -5,9 +5,11 @@ import controller.TDA.list.LinkedList;
 import models.Pelicula;
 import controller.TDA.list.ListEmptyException;
 
+
 public class PeliculaServices {
     private PeliculaDao obj;
-    public ProyectoServices() {
+
+    public PeliculaServices() {
         obj = new PeliculaDao();
     }  
 
@@ -19,19 +21,19 @@ public class PeliculaServices {
         return obj.update();
     }
 
-    public LinkedList<Proyecto> listAll() {
+    public LinkedList<Pelicula> listAll() {
         return obj.getListAll();
     }
 
-    public Proyecto getProyecto() {
-        return obj.getProyecto();
+    public Pelicula getPelicula() {
+        return obj.getPelicula();
     }
 
-    public void setProyecto(Proyecto proyecto) {
-        obj.setProyecto(proyecto);
+    public void setPelicula(Pelicula Pelicula) {
+        obj.setPelicula(Pelicula);
     }
 
-    public Proyecto get(Integer id) throws Exception {
+    public Pelicula get(Integer id) throws Exception {
         return obj.get(id);
     }
 }

@@ -1,9 +1,9 @@
 package controller.TDA.queue;
 
-public class Queque <E>{
-    private QueueOperation<E> queueOperation;
-    public Queque(Integer cant) {
-        this.queueOperation = new QueueOperation<>(cant);
+public class queue <E>{
+    private queueOperation<E> queueOperation;
+    public queue(Integer cant) {
+        this.queueOperation = new queueOperation<>(cant);
     }
     public void queque(E dato) throws Exception {
         queueOperation.queue(dato);
