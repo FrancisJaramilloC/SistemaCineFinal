@@ -20,7 +20,7 @@ public class PeliculaServices {
     }
 
     public LinkedList<Pelicula> listAll() {
-        return obj.getListAll();
+        return obj.listAll();
     }
 
     public Pelicula getPelicula() {

@@ -14,7 +14,7 @@ import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 
 
-import controller.dao.PersonaServices;
+import controller.dao.services.PersonaServices;
 
 
 @Path("/persona")
@@ -127,7 +127,7 @@ public class PersonaApi {
             String correo = map.get("correo").toString();
             String clave = map.get("contrasenia").toString();
             NewCookie cookie = new NewCookie("token", ps.getPersona().getToken(), "/", null, NewCookie.DEFAULT_VERSION, null, 3600, false);        
-            if (ps.iniciosesion(correo, contrasenia)) {
+            if (ps.iniciosesion(correo, clave)) {
                 res.put("msg", "Login exitoso");	
                 res.put("token", ps.getPersona().getToken());
                 return Response.ok(res).cookie(cookie).build();
