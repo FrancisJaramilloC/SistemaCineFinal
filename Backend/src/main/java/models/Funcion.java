@@ -1,5 +1,7 @@
 package models;
 
+import java.sql.Date;
+
 public class Funcion {
     private Integer idFuncion;
     private String sala;

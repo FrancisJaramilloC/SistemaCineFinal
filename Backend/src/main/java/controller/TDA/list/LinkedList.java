@@ -74,8 +74,6 @@ public class LinkedList<E> {
             return search;
         }
     }
-
-
   
     public void update(E data, Integer post) throws ListEmptyException {
         if(isEmpty()) {
@@ -158,10 +156,6 @@ public class LinkedList<E> {
             return element;
         }
     }
-
-
-
-
 
     private E getFirst() throws ListEmptyException {
         if (isEmpty()) {

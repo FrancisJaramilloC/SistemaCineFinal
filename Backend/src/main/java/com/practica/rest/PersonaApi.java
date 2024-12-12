@@ -1,4 +1,4 @@
-package com.example.rest;
+package com.practica.rest;
 
 import java.util.HashMap;
 

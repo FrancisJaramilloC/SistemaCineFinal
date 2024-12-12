@@ -12,22 +12,22 @@ public class PeliculaDao extends AdapterDao<Pelicula> {
     private Pelicula pelicula;
     private LinkedList<Pelicula> listAll;
 
-    public ProyectoDaoU() {
-        super(Proyecto.class);
+    public PeliculaDao() {
+        super(Pelicula.class);
     }
 
-    public Proyecto getProyecto() {
+    public Pelicula getPelicula() {
         if (pelicula == null) {
             pelicula = new Pelicula();
         }
-        return this.proyecto;
+        return this.pelicula;
     }
     
     public void setPelicula(Pelicula pelicula) {
         this.pelicula = pelicula;
     }
 
-    public linkedList<Proyecto> getListAll() {
+    public linkedList<Pelicula> getListAll() {
         if(this.listAll == null) {
             this.listAll = ListAll();
         }

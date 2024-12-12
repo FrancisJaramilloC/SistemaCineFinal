@@ -8,12 +8,12 @@ import controller.TDA.list.LinkedList;
 import controller.TDA.list.ListEmptyException;
 import models.Pelicula;
 
-public class PeliculaDao extends AdapterDao<Pelicula> {
+public class EmpleadoDao extends AdapterDao<Pelicula> {
     private Pelicula pelicula;
     private LinkedList<Pelicula> listAll;
 
-    public ProyectoDaoU() {
-        super(Proyecto.class);
+    public EmpleadoDao() {
+        super(Empleado.class);
     }
 
     public Proyecto getProyecto() {
