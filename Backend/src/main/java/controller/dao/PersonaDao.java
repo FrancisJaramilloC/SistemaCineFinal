@@ -7,7 +7,11 @@ import models.Persona;
 import java.util.Optional;
 import org.mindrot.jbcrypt.BCrypt;
 import controller.dao.RolDao;
+<<<<<<< HEAD
 //import controller.dao.TokenUtil;
+=======
+import controller.dao.Token;
+>>>>>>> Rama_Fermin
 
 public class PersonaDao extends AdapterDao<Persona> {
     private Persona persona;
@@ -43,7 +47,7 @@ public class PersonaDao extends AdapterDao<Persona> {
         getPersona().setIdPersona(id);
         String encryclave = encryclave(getPersona().getClave());
         getPersona().setClave(encryclave);
-        String token = TokenUtil.generateToken(getPersona().getIdPersona(), getPersona().getCorreo());
+        String token = Token.generateToken(getPersona().getIdPersona(), getPersona().getCorreo());
         getPersona().setToken(token);
         persist(getPersona());
         return true;
@@ -65,7 +69,7 @@ public class PersonaDao extends AdapterDao<Persona> {
         for (Persona persona : personas) {
             if (persona.getCorreo().equals(correo)) {
                 if (BCrypt.checkpw(clave, persona.getClave())) {
-                    String token = TokenUtil.generateToken(persona.getIdPersona(), persona.getCorreo());
+                    String token = Token.generateToken(persona.getIdPersona(), persona.getCorreo());
                     persona.setToken(token);
 
                     for (int i = 0; i < list.getSize(); i++) {

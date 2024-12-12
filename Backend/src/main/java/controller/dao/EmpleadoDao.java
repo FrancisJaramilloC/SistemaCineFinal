@@ -8,9 +8,15 @@ import controller.TDA.list.LinkedList;
 import controller.TDA.list.ListEmptyException;
 import models.Empleado;
 
+<<<<<<< HEAD
 public class EmpleadoDao extends AdapterDao<Empleado> {
     private Empleado Empleado;
     private LinkedList<Empleado> listAll;
+=======
+public class EmpleadoDao extends AdapterDao<Pelicula> {
+    private Pelicula pelicula;
+    private LinkedList<Pelicula> listAll;
+>>>>>>> Rama_Fermin
 
     public EmpleadoDao() {
         super(Empleado.class);

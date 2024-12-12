@@ -1,6 +1,10 @@
 package models;
 
+<<<<<<< HEAD
 import java.util.Date;
+=======
+import java.sql.Date;
+>>>>>>> Rama_Fermin
 
 public class Funcion {
     private Integer idFuncion;

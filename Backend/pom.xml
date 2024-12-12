@@ -96,7 +96,7 @@
                     <manifest>
                         <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                         <addDefaultSpecificationEntries>true</addDefaultSpecificationEntries>
-                        <mainClass>com.example.rest.Main</mainClass>
+                        <mainClass>com.practica.rest.Main</mainClass>
                     </manifest>
                 </archive>
             </configuration>
@@ -106,7 +106,7 @@
             <artifactId>exec-maven-plugin</artifactId>
             <version>3.5.0</version>
             <configuration>
-                <mainClass>com.example.rest.Main</mainClass>
+                <mainClass>com.practica.rest.Main</mainClass>
             </configuration>
         </plugin>
     </plugins>

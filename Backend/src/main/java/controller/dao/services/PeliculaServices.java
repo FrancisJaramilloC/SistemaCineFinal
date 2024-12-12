@@ -8,7 +8,10 @@ import controller.TDA.list.ListEmptyException;
 
 public class PeliculaServices {
     private PeliculaDao obj;
+<<<<<<< HEAD
 
+=======
+>>>>>>> Rama_Fermin
     public PeliculaServices() {
         obj = new PeliculaDao();
     }  
@@ -22,15 +25,24 @@ public class PeliculaServices {
     }
 
     public LinkedList<Pelicula> listAll() {
+<<<<<<< HEAD
         return obj.getListAll();
+=======
+        return obj.listAll();
+>>>>>>> Rama_Fermin
     }
 
     public Pelicula getPelicula() {
         return obj.getPelicula();
     }
 
+<<<<<<< HEAD
     public void setPelicula(Pelicula Pelicula) {
         obj.setPelicula(Pelicula);
+=======
+    public void setProyecto(Pelicula pelicula) {
+        obj.setPelicula(pelicula);
+>>>>>>> Rama_Fermin
     }
 
     public Pelicula get(Integer id) throws Exception {

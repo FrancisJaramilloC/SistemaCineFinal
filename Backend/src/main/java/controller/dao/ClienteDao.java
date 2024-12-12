@@ -47,4 +47,9 @@ public class ClienteDao extends AdapterDao<Cliente> {
         return true;
     }
 
+    public Pelicula getPelicula() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPelicula'");
+    }
+
 }
