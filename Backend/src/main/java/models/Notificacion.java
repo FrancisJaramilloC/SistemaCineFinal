@@ -39,4 +39,5 @@ public class Notificacion {
     public void setDate(LocalDateTime date) {
         this.date = date;
     }
+
 }

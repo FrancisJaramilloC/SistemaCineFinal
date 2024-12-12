@@ -8,50 +8,39 @@ import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
+
+import models.Notificacion;
+
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
 
-import controller.dao.services.NotificacionServices;
-
-@Path("/notificacion")
+@Path("/notificaciones")
 public class NotificacionApi {
 
-    @Path("/list")
-    @GET
-    @Produces(MediaType.APPLICATION_JSON)
-    public Response getNotificacion() {
-        HashMap<String, Object> map = new HashMap<>();
-        NotificacionServices ns = new NotificacionServices();
-        map.put("notifications", "Lista de notificaciones");
-        map.put("data", ns.listAll().toArray());
-        if (ns.listAll().isEmpty()) {
-            map.put("message", "No hay notificaciones registradas");
-        }
-        return Response.ok(map).build();
-    }
-
-    @Path("/save")
     @POST
+    @Path("/enviar")
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_JSON)
-    public Response saveNotificacion(HashMap<String, Object> map) {
-        HashMap<String, Object> res = new HashMap<>();
-        NotificacionServices ns = new NotificacionServices();
+    public Response enviarNotificacion(HashMap<String, Object> map) {
+ 
+        Integer idNotificacion = (Integer) map.get("idNotificacion");
+        String message = (String) map.get("message");
 
-        if (map.get("message") == null) {
-            res.put("message", "Falta el mensaje");
-            return Response.status(Response.Status.BAD_REQUEST).entity(res).build();
+        if (idNotificacion == null || message == null) {
+            return Response.status(Response.Status.BAD_REQUEST)
+                           .entity("Faltan parámetros para la notificación.")
+                           .build();
         }
 
-        try {
-            ns.getNotificacion().setMessage(map.get("message").toString());
-            ns.getNotificacion().setDate(LocalDateTime.now());
-            ns.save();
-            res.put("message", "Notificación registrada correctamente");
-            return Response.ok(res).build();
-        } catch (Exception e) {
-            res.put("message", "Error al registrar la notificacion");
-            return Response.status(Response.Status.BAD_REQUEST).entity(res).build();
-        }
+        Notificacion notificacion = new Notificacion(idNotificacion, message, LocalDateTime.now());
+
+        HashMap<String, Object> response = new HashMap<>();
+        response.put("idNotificacion", notificacion.getIdNotificacion());
+        response.put("message", notificacion.getMessage());
+        response.put("date", notificacion.getDate().toString());
+
+        return Response.ok(response).build();
     }
 }
+
+
