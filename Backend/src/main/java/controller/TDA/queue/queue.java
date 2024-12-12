@@ -6,7 +6,7 @@ public class Queue <E>{
         this.queueOperation = new QueueOperation<>(cant);
     }
     public void queque(E dato) throws Exception {
-        queueOperation.queue(dato);
+        queueOperation.queque(dato);
     }
     public Integer getSize() {
         return this.queueOperation.getSize();

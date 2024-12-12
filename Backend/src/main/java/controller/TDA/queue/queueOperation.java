@@ -14,7 +14,7 @@ public class QueueOperation <E> extends LinkedList<E>{
         return getSize().intValue() <= top.intValue();
     }
 
-    public void queue(E dato) throws Exception {
+    public void queque(E dato) throws Exception {
         if (verify()) {
             add(dato,getSize());
         } else {
