@@ -27,7 +27,7 @@ public class PersonaApi {
     @Path("/list")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getpresona(){
+    public Response getpersona(){
         HashMap<String, Object> map = new HashMap<>();
         PersonaServices ps = new PersonaServices();
         map.put("personas", "Lista de personas");
