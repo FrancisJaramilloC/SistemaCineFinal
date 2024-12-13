@@ -6,45 +6,50 @@ import java.util.Arrays;
 
 import controller.TDA.list.LinkedList;
 import controller.TDA.list.ListEmptyException;
-import models.Pelicula;
+import models.Cliente;
 
-public class PeliculaDao extends AdapterDao<Pelicula> {
-    private Pelicula pelicula;
-    private LinkedList<Pelicula> listAll;
+public class ClienteDao extends AdapterDao<Cliente> {
+    private Cliente Cliente;
+    private LinkedList<Cliente> listAll;
 
-    public ProyectoDaoU() {
-        super(Proyecto.class);
+    public ClienteDao() {
+        super(Cliente.class);
     }
 
-    public Proyecto getProyecto() {
-        if (pelicula == null) {
-            pelicula = new Pelicula();
+    public Cliente getCliente() {
+        if (Cliente == null) {
+            Cliente = new Cliente();
         }
-        return this.proyecto;
+        return this.Cliente;
     }
     
-    public void setPelicula(Pelicula pelicula) {
-        this.pelicula = pelicula;
+    public void setCliente(Cliente Cliente) {
+        this.Cliente = Cliente;
     }
 
-    public linkedList<Proyecto> getListAll() {
+    public LinkedList<Cliente> getListAll() {
         if(this.listAll == null) {
-            this.listAll = ListAll();
+            this.listAll = listAll();
         }
         return this.listAll;
     }
 
     public Boolean save() throws Exception {
         Integer id = getListAll().getSize() + 1;
-        getPelicula().setIdPelicula(id);
-        persist(getPelicula());
+        getCliente().setIdCliente(id);
+        persist(getCliente());
         return true;
     }
 
     public Boolean update() throws Exception {
-        this.merge(getPelicula(), getPelicula().getIdpelicula() - 1);
+        this.merge(getCliente(), getCliente().getIdCliente() - 1);
         this.listAll = listAll();
         return true;
+    }
+
+    public Pelicula getPelicula() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getPelicula'");
     }
 
 }

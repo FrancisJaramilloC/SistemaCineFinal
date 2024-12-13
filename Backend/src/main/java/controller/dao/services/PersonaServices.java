@@ -1,8 +1,8 @@
-package controller.dao;
+package controller.dao.services;
 
 import controller.dao.PersonaDao;
-import controller.tda.list.LinkedList;
-import controller.tda.list.ListEmptyException;
+import controller.TDA.list.LinkedList;
+import controller.TDA.list.ListEmptyException;
 import models.Persona;
 
 

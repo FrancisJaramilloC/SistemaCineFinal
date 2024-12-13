@@ -1,4 +1,4 @@
-package com.example.rest;
+package com.practica.rest;
 
 import java.util.HashMap;
 
@@ -12,15 +12,17 @@ import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
+<<<<<<< HEAD
+import controller.dao.services.PersonaServices;
+=======
 
 
-import controller.dao.PersonaServices;
+import controller.dao.services.PersonaServices;
 
+>>>>>>> Rama_Fermin
 
 @Path("/persona")
 public class PersonaApi {
-
-    
 
     @Path("/list")
     @GET
@@ -55,7 +57,7 @@ public class PersonaApi {
             ps.getPersona().setCorreo(map.get("correo").toString());
             ps.getPersona().setTelefono(map.get("telefono").toString());
             ps.getPersona().setDni(map.get("dni").toString());
-            ps.getPersona().setClave(map.get("contrasenia").toString());
+            ps.getPersona().setClave(map.get("clave").toString());
             
             ps.save();
             res.put("message", "Persona registrada correctamente");
@@ -103,7 +105,7 @@ public class PersonaApi {
             ps.getPersona().setCorreo(map.get("correo").toString());
             ps.getPersona().setTelefono(map.get("telefono").toString());
             ps.getPersona().setDni(map.get("dni").toString());
-            ps.getPersona().setClave(map.get("contrasenia").toString());
+            ps.getPersona().setClave(map.get("clave").toString());
             ps.update();
             res.put("message", "Persona actualizada correctamente");
             res.put("data", "Actualizado");
@@ -125,9 +127,9 @@ public class PersonaApi {
 
         try {
             String correo = map.get("correo").toString();
-            String clave = map.get("contrasenia").toString();
+            String clave = map.get("clave").toString();
             NewCookie cookie = new NewCookie("token", ps.getPersona().getToken(), "/", null, NewCookie.DEFAULT_VERSION, null, 3600, false);        
-            if (ps.iniciosesion(correo, contrasenia)) {
+            if (ps.iniciosesion(correo, clave)) {
                 res.put("msg", "Login exitoso");	
                 res.put("token", ps.getPersona().getToken());
                 return Response.ok(res).cookie(cookie).build();

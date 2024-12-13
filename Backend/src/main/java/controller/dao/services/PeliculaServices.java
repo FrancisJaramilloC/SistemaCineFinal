@@ -5,9 +5,14 @@ import controller.TDA.list.LinkedList;
 import models.Pelicula;
 import controller.TDA.list.ListEmptyException;
 
+
 public class PeliculaServices {
     private PeliculaDao obj;
-    public ProyectoServices() {
+<<<<<<< HEAD
+
+=======
+>>>>>>> Rama_Fermin
+    public PeliculaServices() {
         obj = new PeliculaDao();
     }  
 
@@ -19,19 +24,28 @@ public class PeliculaServices {
         return obj.update();
     }
 
-    public LinkedList<Proyecto> listAll() {
+    public LinkedList<Pelicula> listAll() {
+<<<<<<< HEAD
         return obj.getListAll();
+=======
+        return obj.listAll();
+>>>>>>> Rama_Fermin
     }
 
-    public Proyecto getProyecto() {
-        return obj.getProyecto();
+    public Pelicula getPelicula() {
+        return obj.getPelicula();
     }
 
-    public void setProyecto(Proyecto proyecto) {
-        obj.setProyecto(proyecto);
+<<<<<<< HEAD
+    public void setPelicula(Pelicula Pelicula) {
+        obj.setPelicula(Pelicula);
+=======
+    public void setProyecto(Pelicula pelicula) {
+        obj.setPelicula(pelicula);
+>>>>>>> Rama_Fermin
     }
 
-    public Proyecto get(Integer id) throws Exception {
+    public Pelicula get(Integer id) throws Exception {
         return obj.get(id);
     }
 }

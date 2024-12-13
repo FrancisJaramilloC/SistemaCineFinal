@@ -18,7 +18,7 @@ public class Persona {
         this.nombre = nombre;
         this.apellido = apellido;
         this.correo = correo;
-        this.contrasenia = clave;
+        this.clave = clave;
         this.telefono = telefono;
         this.dni = dni;
         this.token = token;
@@ -56,12 +56,21 @@ public class Persona {
         this.correo = correo;
     }
 
+<<<<<<< HEAD
+    public String getClave() {
+        return this.clave;
+    }
+
+    public void setClave(String clave) {
+        this.clave = clave;
+=======
     public String getContrasenia() {
-        return this.contrasenia;
+        return this.clave;
     }
 
     public void setContrasenia(String contrasenia) {
-        this.contrasenia = contrasenia;
+        this.clave = contrasenia;
+>>>>>>> Rama_Fermin
     }
 
     public String getTelefono() {
@@ -86,6 +95,16 @@ public class Persona {
 
     public void setToken(String token) {
         this.token = token;
+    }
+
+    public String getClave() {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'getClave'");
+    }
+
+    public void setClave(String encryclave) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setClave'");
     }
 
 }
