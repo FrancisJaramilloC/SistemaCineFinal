@@ -25,7 +25,7 @@ public class PersonaApi {
     @Path("/list")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    public Response getpresona(){
+    public Response getpersona(){
         HashMap<String, Object> map = new HashMap<>();
         PersonaServices ps = new PersonaServices();
         map.put("personas", "Lista de personas");
@@ -125,7 +125,7 @@ public class PersonaApi {
 
         try {
             String correo = map.get("correo").toString();
-            String clave = map.get("contrasenia").toString();
+            String clave = map.get("clave").toString();
             NewCookie cookie = new NewCookie("token", ps.getPersona().getToken(), "/", null, NewCookie.DEFAULT_VERSION, null, 3600, false);        
             if (ps.iniciosesion(correo, clave)) {
                 res.put("msg", "Login exitoso");	

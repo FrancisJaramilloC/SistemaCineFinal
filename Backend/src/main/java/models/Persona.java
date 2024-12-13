@@ -13,7 +13,7 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(Integer idPersona, String nombre, String apellido, String correo, String clave, String telefono, String dni) {
+    public Persona(Integer idPersona, String nombre, String apellido, String correo, String clave, String telefono, String dni, String token) {
         this.idPersona = idPersona;
         this.nombre = nombre;
         this.apellido = apellido;
