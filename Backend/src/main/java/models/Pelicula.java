@@ -6,18 +6,18 @@ public class Pelicula {
     private String duracion;
     private String genero;
     private String clasificacion;
-    private String descripcion;
+
 
     public Pelicula(){
     }
 
-    public Pelicula(Integer idPelicula, String titulo, String duracion, String genero, String clasificacion, String descripcion){
+    public Pelicula(Integer idPelicula, String titulo, String duracion, String genero, String clasificacion){
         this.idPelicula = idPelicula;
         this.titulo = titulo;
         this.duracion = duracion;
         this.genero = genero;
         this.clasificacion = clasificacion;
-        this.descripcion = descripcion;
+
     }
 
     public Integer getIdPelicula() {
@@ -58,14 +58,6 @@ public class Pelicula {
 
     public void setClasificacion(String clasificacion) {
         this.clasificacion = clasificacion;
-    }
-
-    public String getDescripcion() {
-        return this.descripcion;
-    }
-
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
     }
 
 }

@@ -7,6 +7,7 @@ import java.util.Arrays;
 import controller.TDA.list.LinkedList;
 import controller.TDA.list.ListEmptyException;
 import models.Cliente;
+import models.Pelicula;
 
 public class ClienteDao extends AdapterDao<Cliente> {
     private Cliente Cliente;

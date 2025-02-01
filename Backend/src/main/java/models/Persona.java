@@ -13,7 +13,7 @@ public class Persona {
     public Persona() {
     }
 
-    public Persona(Integer idPersona, String nombre, String apellido, String correo, String clave, String telefono, String dni) {
+    public Persona(Integer idPersona, String nombre, String apellido, String correo, String clave, String telefono, String dni, String token) {
         this.idPersona = idPersona;
         this.nombre = nombre;
         this.apellido = apellido;
@@ -56,21 +56,12 @@ public class Persona {
         this.correo = correo;
     }
 
-<<<<<<< HEAD
     public String getClave() {
         return this.clave;
     }
 
     public void setClave(String clave) {
         this.clave = clave;
-=======
-    public String getContrasenia() {
-        return this.clave;
-    }
-
-    public void setContrasenia(String contrasenia) {
-        this.clave = contrasenia;
->>>>>>> Rama_Fermin
     }
 
     public String getTelefono() {
@@ -97,14 +88,5 @@ public class Persona {
         this.token = token;
     }
 
-    public String getClave() {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getClave'");
-    }
-
-    public void setClave(String encryclave) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setClave'");
-    }
 
 }
