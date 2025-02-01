@@ -1,16 +1,9 @@
 package controller.TDA.queue;
 
-<<<<<<< HEAD
 public class queue <E>{
     private queueOperation<E> queueOperation;
     public queue(Integer cant) {
         this.queueOperation = new queueOperation<>(cant);
-=======
-public class Queue <E>{
-    private QueueOperation<E> queueOperation;
-    public Queue(Integer cant) {
-        this.queueOperation = new QueueOperation<>(cant);
->>>>>>> Rama_Fermin
     }
     public void queque(E dato) throws Exception {
         queueOperation.queque(dato);

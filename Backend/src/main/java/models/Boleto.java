@@ -1,52 +1,51 @@
 package models;
 
-public class Boleto{
+public class Boleto {
     private Integer idBoleto;
-    private String infoFuncion;
-    private String infoAsiento;
-    private boolean precio;
+    private Pelicula pelicula;
+    private Sala sala;
+    private Asiento asiento;
 
-    public Boleto(){
+    public Boleto() {
     }
 
-    public Boleto(Integer idBoleto, String infoFuncion, String infoAsiento, boolean precio){
+    public Boleto(Integer idBoleto, Pelicula pelicula, Sala sala, Asiento asiento) {
         this.idBoleto = idBoleto;
-        this.infoFuncion = infoFuncion;
-        this.infoAsiento = infoAsiento;
-        this.precio = precio;
+        this.pelicula = pelicula;
+        this.sala = sala;
+        this.asiento = asiento;
     }
 
+    // Getters y Setters
     public Integer getIdBoleto() {
-        return this.idBoleto;
+        return idBoleto;
     }
 
     public void setIdBoleto(Integer idBoleto) {
         this.idBoleto = idBoleto;
     }
 
-    public String getInfoFuncion() {
-        return this.infoFuncion;
+    public Pelicula getPelicula() {
+        return pelicula;
     }
 
-    public void setInfoFuncion(String infoFuncion) {
-        this.infoFuncion = infoFuncion;
+    public void setPelicula(Pelicula pelicula) {
+        this.pelicula = pelicula;
     }
 
-    public String getInfoAsiento() {
-        return this.infoAsiento;
+    public Sala getSala() {
+        return sala;
     }
 
-    public void setInfoAsiento(String infoAsiento) {
-        this.infoAsiento = infoAsiento;
+    public void setSala(Sala sala) {
+        this.sala = sala;
     }
 
-    public boolean isPrecio() {
-        return this.precio;
+    public Asiento getAsiento() {
+        return asiento;
     }
 
-    public void setPrecio(boolean precio) {
-		this.precio = precio;
-	}
-
+    public void setAsiento(Asiento asiento) {
+        this.asiento = asiento;
+    }
 }
-

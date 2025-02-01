@@ -7,11 +7,7 @@ import models.Persona;
 import java.util.Optional;
 import org.mindrot.jbcrypt.BCrypt;
 import controller.dao.RolDao;
-<<<<<<< HEAD
 //import controller.dao.TokenUtil;
-=======
-import controller.dao.Token;
->>>>>>> Rama_Fermin
 
 public class PersonaDao extends AdapterDao<Persona> {
     private Persona persona;

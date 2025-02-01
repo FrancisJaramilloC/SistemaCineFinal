@@ -12,14 +12,7 @@ import javax.ws.rs.core.NewCookie;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.Consumes;
 import javax.ws.rs.POST;
-<<<<<<< HEAD
 import controller.dao.services.PersonaServices;
-=======
-
-
-import controller.dao.services.PersonaServices;
-
->>>>>>> Rama_Fermin
 
 @Path("/persona")
 public class PersonaApi {
