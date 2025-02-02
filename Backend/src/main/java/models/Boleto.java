@@ -5,16 +5,10 @@ public class Boleto {
     private Pelicula pelicula;
     private Sala sala;
     private Asiento asiento;
+    private Double precio;
 
-    public Boleto() {
-    }
-
-    public Boleto(Integer idBoleto, Pelicula pelicula, Sala sala, Asiento asiento) {
-        this.idBoleto = idBoleto;
-        this.pelicula = pelicula;
-        this.sala = sala;
-        this.asiento = asiento;
-    }
+    // Constructor
+    public Boleto() {}
 
     // Getters y Setters
     public Integer getIdBoleto() {
@@ -47,5 +41,13 @@ public class Boleto {
 
     public void setAsiento(Asiento asiento) {
         this.asiento = asiento;
+    }
+
+    public Double getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(Double precio) {
+        this.precio = precio;
     }
 }

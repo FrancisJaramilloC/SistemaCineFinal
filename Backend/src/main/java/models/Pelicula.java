@@ -1,63 +1,37 @@
 package models;
 
 public class Pelicula {
-    private Integer idPelicula;
+    private int id;
     private String titulo;
-    private String duracion;
     private String genero;
-    private String clasificacion;
+    private int duracion; // en minutos
+    private Sala sala; // Relación con la sala
 
+    // Constructor vacío
+    public Pelicula() {}
 
-    public Pelicula(){
-    }
-
-    public Pelicula(Integer idPelicula, String titulo, String duracion, String genero, String clasificacion){
-        this.idPelicula = idPelicula;
+    // Constructor con parámetros
+    public Pelicula(int id, String titulo, String genero, int duracion, Sala sala) {
+        this.id = id;
         this.titulo = titulo;
-        this.duracion = duracion;
         this.genero = genero;
-        this.clasificacion = clasificacion;
-
-    }
-
-    public Integer getIdPelicula() {
-        return this.idPelicula;
-    }
-
-    public void setIdPelicula(Integer idPelicula) {
-        this.idPelicula = idPelicula;
-    }
-
-    public String getTitulo() {
-        return this.titulo;
-    }
-
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
-
-    public String getDuracion() {
-        return this.duracion;
-    }
-
-    public void setDuracion(String duracion) {
         this.duracion = duracion;
+        this.sala = sala;
     }
 
-    public String getGenero() {
-        return this.genero;
-    }
+    // Getters y Setters
+    public int getId() { return id; }
+    public void setId(int id) { this.id = id; }
 
-    public void setGenero(String genero) {
-        this.genero = genero;
-    }
+    public String getTitulo() { return titulo; }
+    public void setTitulo(String titulo) { this.titulo = titulo; }
 
-    public String getClasificacion() {
-        return this.clasificacion;
-    }
+    public String getGenero() { return genero; }
+    public void setGenero(String genero) { this.genero = genero; }
 
-    public void setClasificacion(String clasificacion) {
-        this.clasificacion = clasificacion;
-    }
+    public int getDuracion() { return duracion; }
+    public void setDuracion(int duracion) { this.duracion = duracion; }
 
+    public Sala getSala() { return sala; }
+    public void setSala(Sala sala) { this.sala = sala; }
 }
