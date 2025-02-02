@@ -2,16 +2,16 @@ package models;
 
 public class Asiento {
     private Integer idAsiento;
-    private int numero;
-    private boolean ocupado;
+    private Boolean ocupado;
 
     public Asiento() {
+        this.ocupado = false;
     }
 
-    public Asiento(Integer idAsiento, int numero, boolean ocupado) {
+    // Asegúrate de que el ID no sea null
+    public Asiento(Integer idAsiento) {
         this.idAsiento = idAsiento;
-        this.numero = numero;
-        this.ocupado = ocupado;
+        this.ocupado = false;
     }
 
     // Getters y Setters
@@ -23,19 +23,11 @@ public class Asiento {
         this.idAsiento = idAsiento;
     }
 
-    public int getNumero() {
-        return numero;
-    }
-
-    public void setNumero(int numero) {
-        this.numero = numero;
-    }
-
-    public boolean isOcupado() {
+    public Boolean isOcupado() {
         return ocupado;
     }
 
-    public void setOcupado(boolean ocupado) {
+    public void setOcupado(Boolean ocupado) {
         this.ocupado = ocupado;
     }
 }
