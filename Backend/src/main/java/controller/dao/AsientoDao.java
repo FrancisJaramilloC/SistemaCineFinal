@@ -37,16 +37,20 @@ public class AsientoDao extends AdapterDao<Asiento> {
         persist(getAsiento());
         return true;
     }
-    
 
     public Boolean update(Asiento asiento) throws Exception {
-        merge(getAsiento(), getAsiento().getIdAsiento() - 1);
+        if (asiento == null || asiento.getIdAsiento() == null) {
+            throw new Exception("Asiento inválido para actualizar.");
+        }
+        merge(asiento, asiento.getIdAsiento() - 1);
         listAll = listAll();
         return true;
     }
 
     public Asiento get(Integer id) throws ListEmptyException {
+        if (id == null || id <= 0 || id > getListAll().getSize()) {
+            throw new ListEmptyException("ID de asiento inválido: " + id);
+        }
         return getListAll().get(id - 1);
     }
-    
 }

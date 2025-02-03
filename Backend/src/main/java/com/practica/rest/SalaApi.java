@@ -9,23 +9,29 @@ import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
 import controller.dao.services.SalaServices;
 import controller.dao.services.AsientoServices;
+import controller.dao.services.EmpleadoServices;
+import controller.dao.services.PeliculaServices;
 import models.Sala;
 import models.Asiento;
+import models.Pelicula;
 import controller.TDA.list.LinkedList; // Tu implementación de LinkedList
 import java.util.List;
 
 @Path("/sala")
 public class SalaApi {
-
+    @Path("/list")
     @GET
     @Produces(MediaType.APPLICATION_JSON)
-    @Path("/list")
-    public Response getAll() {
+    public Response getEmpleado(){
         HashMap<String, Object> map = new HashMap<>();
-        SalaServices salaService = new SalaServices();
-        map.put("msg", "OK");
-        map.put("data", salaService.listAll().toArray());
+        EmpleadoServices es = new EmpleadoServices();
+        map.put("empleados", "Lista de empleados");
+        map.put("data", es.listAll().toArray());
+        if (es.listAll().isEmpty()){
+            map.put("message", "No hay empleados registrados");
+        }
         return Response.ok(map).build();
+
     }
 
     @Path("/save")
@@ -37,6 +43,8 @@ public class SalaApi {
         try {
             SalaServices salaService = new SalaServices();
             AsientoServices asientoService = new AsientoServices();
+            PeliculaServices peliculaService = new PeliculaServices();  // Servicios para manejar película
+            
             Sala sala = new Sala();
     
             // Asignar datos de la sala
@@ -51,7 +59,7 @@ public class SalaApi {
             );
     
             // Obtener todos los asientos guardados en la BD
-            LinkedList<Asiento> todosLosAsientos = asientoService.listAll(); 
+            LinkedList<Asiento> todosLosAsientos = asientoService.listAll();
             
             // Filtrar solo los asientos que coincidan con los IDs proporcionados
             LinkedList<Asiento> asientosSeleccionados = new LinkedList<>();
@@ -64,19 +72,25 @@ public class SalaApi {
     
             // Asignar los asientos seleccionados a la sala
             sala.setAsientos(asientosSeleccionados);
-    
-            // Guardar la sala con los asientos seleccionados
+
+            // Obtener la película por ID
+            Integer peliculaId = Integer.parseInt(map.get("idPelicula").toString());
+            Pelicula pelicula = peliculaService.get(peliculaId);  // Obtener la película desde el servicio
+
+            // Asignar la película a la sala
+            sala.setPelicula(pelicula);
+
+            // Guardar la sala con los asientos y la película
             salaService.setSala(sala);
             salaService.save();
     
             res.put("msg", "OK");
-            res.put("data", "Sala registrada con los asientos especificados");
+            res.put("data", "Sala registrada con los asientos y película especificados");
             return Response.ok(res).build();
         } catch (Exception e) {
             res.put("msg", "Error");
             res.put("data", e.toString());
-            return Response.status(Status.INTERNAL_SERVER_ERROR).entity(res).build();
+            return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(res).build();
         }
     }
-    
-}    
+}

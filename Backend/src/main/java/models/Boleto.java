@@ -2,15 +2,19 @@ package models;
 
 public class Boleto {
     private Integer idBoleto;
-    private Pelicula pelicula;
-    private Sala sala;
-    private Asiento asiento;
-    private Double precio;
+    private String nombrePelicula;
+    private String nombreSala;
+    private Integer idAsiento;
 
-    // Constructor
     public Boleto() {}
 
-    // Getters y Setters
+    public Boleto(Integer idBoleto, String nombrePelicula, String nombreSala, Integer idAsiento) {
+        this.idBoleto = idBoleto;
+        this.nombrePelicula = nombrePelicula;
+        this.nombreSala = nombreSala;
+        this.idAsiento = idAsiento;
+    }
+
     public Integer getIdBoleto() {
         return idBoleto;
     }
@@ -19,35 +23,27 @@ public class Boleto {
         this.idBoleto = idBoleto;
     }
 
-    public Pelicula getPelicula() {
-        return pelicula;
+    public String getNombrePelicula() {
+        return nombrePelicula;
     }
 
-    public void setPelicula(Pelicula pelicula) {
-        this.pelicula = pelicula;
+    public void setNombrePelicula(String nombrePelicula) {
+        this.nombrePelicula = nombrePelicula;
     }
 
-    public Sala getSala() {
-        return sala;
+    public String getNombreSala() {
+        return nombreSala;
     }
 
-    public void setSala(Sala sala) {
-        this.sala = sala;
+    public void setNombreSala(String nombreSala) {
+        this.nombreSala = nombreSala;
     }
 
-    public Asiento getAsiento() {
-        return asiento;
+    public Integer getIdAsiento() {
+        return idAsiento;
     }
 
-    public void setAsiento(Asiento asiento) {
-        this.asiento = asiento;
-    }
-
-    public Double getPrecio() {
-        return precio;
-    }
-
-    public void setPrecio(Double precio) {
-        this.precio = precio;
+    public void setIdAsiento(Integer idAsiento) {
+        this.idAsiento = idAsiento;
     }
 }
