@@ -23,54 +23,6 @@
                             "info": {
                                 "idAsiento": 4,
                                 "ocupado": false
-                            },
-                            "next": {
-                                "info": {
-                                    "idAsiento": 5,
-                                    "ocupado": false
-                                },
-                                "next": {
-                                    "info": {
-                                        "idAsiento": 6,
-                                        "ocupado": false
-                                    },
-                                    "next": {
-                                        "info": {
-                                            "idAsiento": 7,
-                                            "ocupado": false
-                                        },
-                                        "next": {
-                                            "info": {
-                                                "idAsiento": 8,
-                                                "ocupado": false
-                                            },
-                                            "next": {
-                                                "info": {
-                                                    "idAsiento": 9,
-                                                    "ocupado": false
-                                                },
-                                                "next": {
-                                                    "info": {
-                                                        "idAsiento": 10,
-                                                        "ocupado": false
-                                                    },
-                                                    "next": {
-                                                        "info": {
-                                                            "idAsiento": 11,
-                                                            "ocupado": false
-                                                        },
-                                                        "next": {
-                                                            "info": {
-                                                                "idAsiento": 12,
-                                                                "ocupado": false
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
                             }
                         }
                     }
@@ -78,177 +30,17 @@
             },
             "last": {
                 "info": {
-                    "idAsiento": 12,
+                    "idAsiento": 4,
                     "ocupado": false
                 }
             },
-            "size": 12
-        }
-    },
-    {
-        "idSala": 2,
-        "nombre": "Sala Normal",
-        "capacidad": 20,
-        "asientos": {
-            "header": {
-                "info": {
-                    "idAsiento": 10,
-                    "ocupado": false
-                },
-                "next": {
-                    "info": {
-                        "idAsiento": 13,
-                        "ocupado": false
-                    },
-                    "next": {
-                        "info": {
-                            "idAsiento": 14,
-                            "ocupado": false
-                        },
-                        "next": {
-                            "info": {
-                                "idAsiento": 15,
-                                "ocupado": false
-                            },
-                            "next": {
-                                "info": {
-                                    "idAsiento": 16,
-                                    "ocupado": false
-                                },
-                                "next": {
-                                    "info": {
-                                        "idAsiento": 17,
-                                        "ocupado": false
-                                    },
-                                    "next": {
-                                        "info": {
-                                            "idAsiento": 18,
-                                            "ocupado": false
-                                        },
-                                        "next": {
-                                            "info": {
-                                                "idAsiento": 20,
-                                                "ocupado": false
-                                            },
-                                            "next": {
-                                                "info": {
-                                                    "idAsiento": 21,
-                                                    "ocupado": false
-                                                },
-                                                "next": {
-                                                    "info": {
-                                                        "idAsiento": 22,
-                                                        "ocupado": false
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "last": {
-                "info": {
-                    "idAsiento": 22,
-                    "ocupado": false
-                }
-            },
-            "size": 10
-        }
-    },
-    {
-        "idSala": 3,
-        "nombre": "Sala 3D",
-        "capacidad": 13,
-        "asientos": {
-            "header": {
-                "info": {
-                    "idAsiento": 23,
-                    "ocupado": false
-                },
-                "next": {
-                    "info": {
-                        "idAsiento": 24,
-                        "ocupado": false
-                    },
-                    "next": {
-                        "info": {
-                            "idAsiento": 25,
-                            "ocupado": false
-                        },
-                        "next": {
-                            "info": {
-                                "idAsiento": 26,
-                                "ocupado": false
-                            },
-                            "next": {
-                                "info": {
-                                    "idAsiento": 27,
-                                    "ocupado": false
-                                },
-                                "next": {
-                                    "info": {
-                                        "idAsiento": 28,
-                                        "ocupado": false
-                                    },
-                                    "next": {
-                                        "info": {
-                                            "idAsiento": 29,
-                                            "ocupado": false
-                                        },
-                                        "next": {
-                                            "info": {
-                                                "idAsiento": 30,
-                                                "ocupado": false
-                                            },
-                                            "next": {
-                                                "info": {
-                                                    "idAsiento": 31,
-                                                    "ocupado": false
-                                                },
-                                                "next": {
-                                                    "info": {
-                                                        "idAsiento": 32,
-                                                        "ocupado": false
-                                                    },
-                                                    "next": {
-                                                        "info": {
-                                                            "idAsiento": 33,
-                                                            "ocupado": false
-                                                        },
-                                                        "next": {
-                                                            "info": {
-                                                                "idAsiento": 34,
-                                                                "ocupado": false
-                                                            },
-                                                            "next": {
-                                                                "info": {
-                                                                    "idAsiento": 35,
-                                                                    "ocupado": false
-                                                                }
-                                                            }
-                                                        }
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            },
-            "last": {
-                "info": {
-                    "idAsiento": 35,
-                    "ocupado": false
-                }
-            },
-            "size": 13
+            "size": 4
+        },
+        "pelicula": {
+            "idPelicula": 1,
+            "nombre": "Happy Feet",
+            "duracion": "150",
+            "genero": "Comedia"
         }
     }
 ]

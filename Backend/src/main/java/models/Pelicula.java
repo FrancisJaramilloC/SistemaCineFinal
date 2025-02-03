@@ -1,37 +1,42 @@
 package models;
 
 public class Pelicula {
-    private int id;
-    private String titulo;
+    private Integer idPelicula;
+    private String nombre;
+    private String duracion;
     private String genero;
-    private int duracion; // en minutos
-    private Sala sala; // Relación con la sala
 
-    // Constructor vacío
-    public Pelicula() {}
 
-    // Constructor con parámetros
-    public Pelicula(int id, String titulo, String genero, int duracion, Sala sala) {
-        this.id = id;
-        this.titulo = titulo;
-        this.genero = genero;
-        this.duracion = duracion;
-        this.sala = sala;
+    // Getters y setters
+    public Integer getIdPelicula() {
+        return idPelicula;
     }
 
-    // Getters y Setters
-    public int getId() { return id; }
-    public void setId(int id) { this.id = id; }
+    public void setIdPelicula(Integer idPelicula) {
+        this.idPelicula = idPelicula;
+    }
 
-    public String getTitulo() { return titulo; }
-    public void setTitulo(String titulo) { this.titulo = titulo; }
+    public String getNombre() {
+        return nombre;
+    }
 
-    public String getGenero() { return genero; }
-    public void setGenero(String genero) { this.genero = genero; }
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
 
-    public int getDuracion() { return duracion; }
-    public void setDuracion(int duracion) { this.duracion = duracion; }
+    public String getDuracion() {
+        return duracion;
+    }
 
-    public Sala getSala() { return sala; }
-    public void setSala(Sala sala) { this.sala = sala; }
+    public void setDuracion(String duracion) {
+        this.duracion = duracion;
+    }
+    
+    public String getGenero() {
+        return genero;
+    }
+
+    public void setGenero(String genero) {
+        this.genero = genero;
+    }
 }

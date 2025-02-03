@@ -2,7 +2,6 @@ package controller.dao;
 
 import controller.dao.implement.AdapterDao;
 import controller.TDA.list.LinkedList;
-import controller.TDA.list.ListEmptyException;
 import models.Pelicula;
 
 public class PeliculaDao extends AdapterDao<Pelicula> {
@@ -33,18 +32,18 @@ public class PeliculaDao extends AdapterDao<Pelicula> {
 
     public Boolean save() throws Exception {
         Integer id = getListAll().getSize() + 1;
-        getPelicula().setId(id);
+        getPelicula().setIdPelicula(id);
         persist(getPelicula());
         return true;
     }
 
-    public Boolean update() throws Exception {
-        merge(getPelicula(), getPelicula().getId() - 1);
+    public Boolean update(Pelicula pelicula) throws Exception {
+        merge(pelicula, pelicula.getIdPelicula() - 1);
         listAll = listAll();
         return true;
     }
 
-    public Pelicula get(Integer id) throws ListEmptyException {
+    public Pelicula get(Integer id) throws Exception {
         return getListAll().get(id - 1);
     }
 }
