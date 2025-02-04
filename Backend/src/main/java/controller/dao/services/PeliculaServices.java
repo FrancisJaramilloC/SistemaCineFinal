@@ -2,10 +2,7 @@ package controller.dao.services;
 
 import controller.dao.PeliculaDao;
 import controller.TDA.list.LinkedList;
-import controller.TDA.list.ListEmptyException;
 import models.Pelicula;
-
-
 public class PeliculaServices {
     private PeliculaDao obj;
     

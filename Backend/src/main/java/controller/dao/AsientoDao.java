@@ -4,7 +4,6 @@ import controller.dao.implement.AdapterDao;
 import controller.TDA.list.LinkedList;
 import controller.TDA.list.ListEmptyException;
 import models.Asiento;
-
 public class AsientoDao extends AdapterDao<Asiento> {
     private Asiento asiento;
     private LinkedList<Asiento> listAll;

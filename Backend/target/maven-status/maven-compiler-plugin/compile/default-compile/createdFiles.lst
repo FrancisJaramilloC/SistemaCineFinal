@@ -14,6 +14,7 @@ controller\dao\services\SalaServices.class
 com\practica\rest\MyResource.class
 com\practica\rest\AsientoApi.class
 controller\dao\services\AsientoServices.class
+com\practica\rest\SalaApi$2.class
 controller\TDA\queue\queueOperation.class
 models\Persona.class
 controller\dao\EmpleadoDao.class

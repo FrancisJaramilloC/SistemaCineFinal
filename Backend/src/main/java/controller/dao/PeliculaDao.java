@@ -3,7 +3,6 @@ package controller.dao;
 import controller.dao.implement.AdapterDao;
 import controller.TDA.list.LinkedList;
 import models.Pelicula;
-
 public class PeliculaDao extends AdapterDao<Pelicula> {
     private Pelicula pelicula;
     private LinkedList<Pelicula> listAll;

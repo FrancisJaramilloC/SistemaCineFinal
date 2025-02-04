@@ -6,7 +6,7 @@ public class Sala {
     private String nombre;
     private int capacidad;
     private LinkedList<Asiento> asientos;
-    private Pelicula pelicula;  // Nuevo atributo para la película
+    private Pelicula pelicula; 
 
     public Sala() {
         this.asientos = new LinkedList<>();
@@ -17,10 +17,9 @@ public class Sala {
         this.nombre = nombre;
         this.capacidad = capacidad;
         this.asientos = new LinkedList<>();
-        this.pelicula = pelicula;  // Asignación de la película
+        this.pelicula = pelicula;  
     }
 
-    // Getters y Setters
     public Integer getIdSala() {
         return idSala;
     }

@@ -1,5 +1,4 @@
 package models;
-
 public class Boleto {
     private Integer idBoleto;
     private String nombrePelicula;
