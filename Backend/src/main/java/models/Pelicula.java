@@ -6,8 +6,6 @@ public class Pelicula {
     private String duracion;
     private String genero;
 
-
-    // Getters y setters
     public Integer getIdPelicula() {
         return idPelicula;
     }

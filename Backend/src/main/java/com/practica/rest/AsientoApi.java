@@ -3,21 +3,17 @@ package com.practica.rest;
 import java.util.HashMap;
 
 import javax.ws.rs.Consumes;
-import javax.ws.rs.DELETE;
+//import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
-import javax.ws.rs.PUT;
+//import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-
 import com.google.gson.Gson;
-import controller.dao.implement.AdapterDao;
-import controller.TDA.list.LinkedList;
 import controller.TDA.list.ListEmptyException;
-import models.Asiento;
 import controller.dao.services.AsientoServices;
 
 import javax.ws.rs.core.Response.Status;

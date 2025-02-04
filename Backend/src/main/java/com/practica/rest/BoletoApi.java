@@ -5,8 +5,8 @@ import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 import javax.ws.rs.core.Response.Status;
-
 import controller.dao.services.BoletoServices;
+import controller.TDA.list.ListEmptyException;
 import controller.dao.services.AsientoServices;
 import controller.dao.services.SalaServices;
 import controller.dao.services.PeliculaServices;
@@ -14,9 +14,21 @@ import models.Boleto;
 import models.Asiento;
 import models.Sala;
 import models.Pelicula;
-
 @Path("/boleto")
 public class BoletoApi {
+    @GET
+    @Produces(MediaType.APPLICATION_JSON)
+    @Path("/list")
+    public Response getAll() throws ListEmptyException, Exception {
+        HashMap map = new HashMap<>();
+        BoletoServices ps = new BoletoServices();
+        map.put("msg", "OK");
+        map.put("data", ps.listAll().toArray());
+        if (ps.listAll().isEmpty()) {
+            map.put("data", new Object[] {});
+        }
+        return Response.ok(map).build();
+    }
 
     @Path("/comprar")
     @POST
@@ -34,7 +46,6 @@ public class BoletoApi {
             PeliculaServices peliculaService = new PeliculaServices();
             BoletoServices boletoService = new BoletoServices();
 
-            // Obtener el asiento
             Asiento asiento = asientoService.get(idAsiento);
             if (asiento == null || asiento.getIdAsiento() == null) {
                 res.put("msg", "Error");
@@ -48,21 +59,17 @@ public class BoletoApi {
                 return Response.status(Status.BAD_REQUEST).entity(res).build();
             }
 
-            // Obtener la sala y la película
             Sala sala = salaService.get(idSala);
             Pelicula pelicula = peliculaService.get(idPelicula);
 
-            // Crear el boleto
             Boleto boleto = new Boleto();
             boleto.setNombrePelicula(pelicula.getNombre());
             boleto.setNombreSala(sala.getNombre());
             boleto.setIdAsiento(idAsiento);
 
-            // Guardar el boleto
             boletoService.setBoleto(boleto);
             boletoService.save();
 
-            // Actualizar el estado del asiento
             asiento.setOcupado(true);
             asientoService.update(asiento);
 

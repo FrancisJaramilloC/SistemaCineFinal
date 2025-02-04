@@ -4,8 +4,6 @@ import controller.dao.implement.AdapterDao;
 import controller.TDA.list.LinkedList;
 import controller.TDA.list.ListEmptyException;
 import models.Sala;
-import models.Asiento;
-
 public class SalaDao extends AdapterDao<Sala> {
     private Sala sala;
     private LinkedList<Sala> listAll;
@@ -48,8 +46,8 @@ public class SalaDao extends AdapterDao<Sala> {
     }
 
     public Sala get(Integer id) throws ListEmptyException {
-        Sala sala = getListAll().get(id - 1);
+        Sala sala = getListAll().get(id - 1); // Aquí el id se reduce por 1
         sala.setAsientos(asientoDao.getListAll()); // Cargar asientos desde AsientoDao
         return sala;
     }
-}
+}    

@@ -2,10 +2,7 @@ package controller.dao.services;
 
 import controller.dao.AsientoDao;
 import controller.TDA.list.LinkedList;
-import controller.TDA.list.ListEmptyException;
 import models.Asiento;
-
-
 public class AsientoServices {
     private AsientoDao obj;
 

@@ -3,7 +3,6 @@ package controller.dao;
 import controller.dao.implement.AdapterDao;
 import controller.TDA.list.LinkedList;
 import models.Boleto;
-
 public class BoletoDao extends AdapterDao<Boleto> {
     private Boleto boleto;
     private LinkedList<Boleto> listAll;

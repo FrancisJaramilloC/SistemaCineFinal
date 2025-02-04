@@ -2,10 +2,7 @@ package controller.dao.services;
 
 import controller.dao.SalaDao;
 import controller.TDA.list.LinkedList;
-import controller.TDA.list.ListEmptyException;
 import models.Sala;
-
-
 public class SalaServices {
     private SalaDao obj;
     public SalaServices() {
@@ -15,7 +12,7 @@ public class SalaServices {
         return obj.save();
     }
 
-    public Boolean update() throws Exception {
+    public Boolean update(Sala sala) throws Exception {
         return obj.update();
     }
 
@@ -31,10 +28,7 @@ public class SalaServices {
         obj.setSala(Sala);
     }
 
-
     public Sala get(Integer id) throws Exception {
         return obj.get(id);
     }
-
-
 }

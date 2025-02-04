@@ -1,7 +1,6 @@
 package controller.TDA.list;
 
 import controller.TDA.list.LinkedList;
-
 public class LinkedList<E> {
     private Node<E> header; // Nodo cabecera (el primer nodo de la lista)
     private Node<E> last; // Nodo último (el último nodo de la lista)
