@@ -111,7 +111,7 @@ public class SalaApi {
                 return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(res).build();
             }
             
-            if(map.containsKey(sala.getIdSala())) {
+            if(map.containsKey("idSala")) {
                 sala.setIdSala(Integer.parseInt(map.get("idSala").toString()));
             }
             if (map.containsKey("nombre")) {

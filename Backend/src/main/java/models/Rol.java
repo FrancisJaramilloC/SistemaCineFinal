@@ -1,51 +1,27 @@
 package models;
 
 public class Rol {
-    private int idRol;
+    private Integer id;
     private String nombre;
-    private String descripcion;
-    private String tipo;
-    
+
     public Rol() {
     }
 
-    public Rol(int idRol, String nombre, String descripcion, String tipo) {
-        this.idRol = idRol;
+    public Rol(Integer id, String nombre) {
+        this.id = id;
         this.nombre = nombre;
-        this.descripcion = descripcion;
-        this.tipo = tipo;
     }
-    
-    public int getIdRol() {
-        return this.idRol;
+
+    public Integer getId() {
+        return id;
     }
-    
-    public void setIdRol(int idRol) {
-        this.idRol = idRol;
+    public void setId(Integer id) {
+        this.id = id;
     }
-    
     public String getNombre() {
-        return this.nombre;
+        return nombre;
     }
-    
     public void setNombre(String nombre) {
         this.nombre = nombre;
     }
-    
-    public String getDescripcion() {
-        return this.descripcion;
-    }
-    
-    public void setDescripcion(String descripcion) {
-        this.descripcion = descripcion;
-    }
-    
-    public String getTipo() {
-        return this.tipo;
-    }
-    
-    public void setTipo(String tipo) {
-        this.tipo = tipo;
-    }
-
 }
