@@ -18,6 +18,10 @@ public class AsientoServices {
         return obj.update(asiento);
     }
 
+    public Boolean delete(Integer id) throws Exception {
+        return obj.delete(id); 
+    }
+
     public LinkedList<Asiento> listAll() {
         return obj.getListAll();
     }

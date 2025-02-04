@@ -1,0 +1,52 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Listado de Salas</h2>
+    <div class="d-flex justify-content-end mb-3">
+        <a href="/admin/sala/register" class="btn btn-success btn-lg"><i class="fas fa-cogs"></i> Nueva Sala</a>
+    </div>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Capacidad</th>
+                        <th>Película</th>
+                        <th>Asientos</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if list %}
+                        {% for item in list %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ item.nombre }}</td>
+                                <td>{{ item.capacidad }}</td>
+                                <td>{{ item.pelicula.nombre if item.pelicula else 'Sin película' }}</td>
+                                <td>
+                                    {% if item.asientos %}
+                                        <ul>
+                                            {% for asiento in item.asientos %}
+                                                <li>{{ asiento.nombre }}</li>
+                                            {% endfor %}
+                                        </ul>
+                                    {% else %}
+                                        <span class="text-muted">Sin asientos asignados</span>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="5" class="text-center">No hay salas registradas.</td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

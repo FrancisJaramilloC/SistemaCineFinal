@@ -20,7 +20,7 @@ public class PersonaServices {
     }
 
     public Boolean delete(Integer id) throws Exception {
-        return obj.deletePersona(id); // Llamar al método delete de PersonaDao
+        return obj.delete(id); 
     }
 
     public LinkedList<Persona> listAll() {

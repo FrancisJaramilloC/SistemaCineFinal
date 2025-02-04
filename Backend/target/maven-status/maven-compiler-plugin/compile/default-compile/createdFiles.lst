@@ -3,7 +3,6 @@ controller\TDA\list\OverFlowException.class
 controller\dao\services\BoletoServices.class
 controller\dao\services\PersonaServices.class
 controller\dao\services\PeliculaServices.class
-controller\dao\Token.class
 models\Asiento.class
 com\practica\rest\BoletoApi.class
 controller\TDA\list\Node.class
@@ -17,13 +16,8 @@ controller\dao\services\AsientoServices.class
 com\practica\rest\SalaApi$2.class
 controller\TDA\queue\queueOperation.class
 models\Persona.class
-controller\dao\EmpleadoDao.class
 com\practica\rest\PersonaApi.class
-controller\dao\services\ClienteServices.class
-controller\dao\ClienteDao.class
-models\Empleado.class
 controller\dao\AsientoDao.class
-com\practica\rest\ClienteApi.class
 controller\dao\PeliculaDao.class
 controller\dao\PersonaDao.class
 controller\TDA\queue\queue.class
@@ -31,13 +25,10 @@ models\Boleto.class
 models\Pelicula.class
 models\Sala.class
 controller\TDA\list\LinkedList.class
-com\practica\rest\EmpleadoApi.class
 com\practica\rest\SalaApi$1.class
 controller\dao\implement\InterfazDao.class
-models\Cliente.class
+controller\dao\services\Persona.class
 controller\dao\implement\AdapterDao.class
 controller\dao\SalaDao.class
 controller\TDA\list\ListEmptyException.class
-controller\dao\services\EmpleadoServices.class
 models\Rol.class
-controller\dao\RolDao.class

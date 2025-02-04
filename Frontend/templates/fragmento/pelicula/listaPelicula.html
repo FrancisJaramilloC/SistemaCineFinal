@@ -1,0 +1,40 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<div class="container mt-4">
+    <h2 class="text-center mb-4">Listado de Películas</h2>
+    <div class="d-flex justify-content-end mb-3">
+        <a href="/admin/pelicula/register" class="btn btn-success btn-lg"><i class="fas fa-film"></i> Nueva Película</a>
+    </div>
+    <div class="card shadow-sm">
+        <div class="card-body">
+            <table class="table table-bordered table-striped table-hover">
+                <thead class="thead-dark">
+                    <tr>
+                        <th>#</th>
+                        <th>Nombre</th>
+                        <th>Duración</th>
+                        <th>Género</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if list %}
+                        {% for item in list %}
+                            <tr>
+                                <td>{{ loop.index }}</td>
+                                <td>{{ item.nombre }}</td>
+                                <td>{{ item.duracion }} minutos</td>
+                                <td>{{ item.genero }}</td>
+                            </tr>
+                        {% endfor %}
+                    {% else %}
+                        <tr>
+                            <td colspan="4" class="text-center">No hay películas registradas.</td>
+                        </tr>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}

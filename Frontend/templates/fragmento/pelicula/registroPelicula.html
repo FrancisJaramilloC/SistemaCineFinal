@@ -1,0 +1,50 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="pagetitle">
+        <h1>Registro de Película</h1>
+    </div>
+    <section class="section">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Información de la Película</h5>
+
+                        <form class="row g-3 needs-validation" method="POST" action="/admin/pelicula/save" novalidate>
+                            <!-- Nombre de la película -->
+                            <h6 class="mt-3">Película</h6>
+                            <div class="col-md-12 mb-3">
+                                <label for="nombre" class="form-label">Nombre de la Película</label>
+                                <input type="text" class="form-control" id="nombre" name="nombre" required>
+                                <div class="invalid-feedback">Por favor, ingrese el nombre de la película.</div>
+                            </div>
+
+                            <!-- Duración -->
+                            <div class="col-md-12 mb-3">
+                                <label for="duracion" class="form-label">Duración</label>
+                                <input type="number" class="form-control" id="duracion" name="duracion" required>
+                                <div class="invalid-feedback">Por favor, ingrese la duración de la película.</div>
+                            </div>
+
+                            <!-- Género -->
+                            <div class="col-md-12 mb-3">
+                                <label for="genero" class="form-label">Género</label>
+                                <input type="text" class="form-control" id="genero" name="genero" required>
+                                <div class="invalid-feedback">Por favor, ingrese el género de la película.</div>
+                            </div>
+
+                            <!-- Botones -->
+                            <div class="col-12 text-end">
+                                <a type="button" class="btn btn-secondary" href="/admin/pelicula/list">Cancelar</a>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

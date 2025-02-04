@@ -11,7 +11,6 @@ public class Persona {
     public Persona() {
     }
 
-
     public Persona(int id, String nombre, String apellido, String identificacion,String celular, boolean existe) {
         this.id = id;
         this.nombre = nombre;
@@ -20,7 +19,6 @@ public class Persona {
         this.celular = celular;
         this.existe = existe;
     }
-
 
     public int getId() {
         return this.id;
