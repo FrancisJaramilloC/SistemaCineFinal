@@ -1,0 +1,41 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<div class="container">
+    <h2 class="mt-4">Compra de Boleto</h2>
+    <section class="section">
+        <form class="row g-3 needs-validation" method="POST" action="/admin/boleto/comprar" novalidate>
+            <input type="hidden" name="idSala" value="{{ sala.idSala }}">
+            
+            <div class="col-md-12 mb-3">
+                <label for="idPelicula" class="form-label">Película</label>
+                <select class="form-select" id="idPelicula" name="idPelicula" required>
+                    <option selected disabled value="">Selecciona una película</option>
+                    {% for pelicula in peliculas %}
+                        <option value="{{ pelicula.idPelicula }}">{{ pelicula.nombre }}</option>
+                    {% endfor %}
+                </select>
+                <div class="invalid-feedback">Por favor, selecciona una película.</div>
+            </div>
+
+            <div class="col-md-12 mb-3">
+                <label for="idAsiento" class="form-label">Asiento</label>
+                <select class="form-select" id="idAsiento" name="idAsiento" required>
+                    <option selected disabled value="">Selecciona un asiento</option>
+                    {% for asiento in sala.asientos %}
+                        {% if not asiento.ocupado %}
+                            <option value="{{ asiento.idAsiento }}">Asiento {{ asiento.idAsiento }}</option>
+                        {% endif %}
+                    {% endfor %}
+                </select>
+                <div class="invalid-feedback">Por favor, selecciona un asiento.</div>
+            </div>
+
+            <div class="col-12 text-end">
+                <a type="button" class="btn btn-secondary" href="/admin/boleto/list">Cancelar</a>
+                <button type="submit" class="btn btn-primary">Comprar</button>
+            </div>
+        </form>
+    </section>
+</div>
+{% endblock %}

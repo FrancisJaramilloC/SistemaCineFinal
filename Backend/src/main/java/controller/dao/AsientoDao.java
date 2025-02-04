@@ -4,6 +4,8 @@ import controller.dao.implement.AdapterDao;
 import controller.TDA.list.LinkedList;
 import controller.TDA.list.ListEmptyException;
 import models.Asiento;
+import models.Persona;
+
 public class AsientoDao extends AdapterDao<Asiento> {
     private Asiento asiento;
     private LinkedList<Asiento> listAll;
@@ -44,6 +46,16 @@ public class AsientoDao extends AdapterDao<Asiento> {
         merge(asiento, asiento.getIdAsiento() - 1);
         listAll = listAll();
         return true;
+    }
+
+    public Boolean delete(int id) throws Exception {
+        Asiento asiento = get(id);
+        if (asiento != null) {
+            asiento.setOcupado(false);
+            this.update(asiento);
+            this.listAll = listAll();
+        }
+        return false;
     }
 
     public Asiento get(Integer id) throws ListEmptyException {

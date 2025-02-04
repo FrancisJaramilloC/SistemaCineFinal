@@ -1,0 +1,38 @@
+{% extends 'template.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="pagetitle">
+        <h1>Editar Asiento</h1>
+    </div>
+    <section class="section">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Información del Asiento</h5>
+
+                        <form class="row g-3 needs-validation" method="POST" action="/admin/asiento/update" novalidate>
+                            <input type="hidden" name="idAsiento" value="{{ asiento.idAsiento }}">
+                            <div class="col-md-12 mb-3">
+                                <label for="ocupado" class="form-label">¿Está ocupado?</label>
+                                <select class="form-select" id="ocupado" name="ocupado" required>
+                                    <option selected disabled value="">Selecciona una opción</option>
+                                    <option value="true" {% if asiento.ocupado %}selected{% endif %}>Sí</option>
+                                    <option value="false" {% if not asiento.ocupado %}selected{% endif %}>No</option>
+                                </select>
+                                <div class="invalid-feedback">Por favor, selecciona si el asiento está ocupado.</div>
+                            </div>
+
+                            <div class="col-12 text-end">
+                                <a type="button" class="btn btn-secondary" href="/admin/asiento/list">Cancelar</a>
+                                <button type="submit" class="btn btn-primary">Guardar</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+{% endblock %}

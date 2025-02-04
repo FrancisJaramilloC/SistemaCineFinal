@@ -1,12 +1,9 @@
 package com.practica.rest;
 
 import java.util.HashMap;
-
 import javax.ws.rs.Consumes;
-//import javax.ws.rs.DELETE;
 import javax.ws.rs.GET;
 import javax.ws.rs.POST;
-//import javax.ws.rs.PUT;
 import javax.ws.rs.Path;
 import javax.ws.rs.PathParam;
 import javax.ws.rs.Produces;
@@ -15,6 +12,7 @@ import javax.ws.rs.core.Response;
 import com.google.gson.Gson;
 import controller.TDA.list.ListEmptyException;
 import controller.dao.services.AsientoServices;
+import controller.dao.services.PersonaServices;
 
 import javax.ws.rs.core.Response.Status;
 
@@ -92,6 +90,34 @@ public class AsientoApi {
             res.put("message", "Error al actualizar persona");
             res.put("data", e.getMessage());
             return Response.status(Response.Status.INTERNAL_SERVER_ERROR).entity(res).build();
+        }
+    }
+
+    @Path("/delete")
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response delete(HashMap<String, Object> map) {
+        HashMap<String, Object> res = new HashMap<>();
+        try {
+            AsientoServices ps = new AsientoServices();
+            Integer id = Integer.parseInt(map.get("idAsiento").toString());
+
+            Boolean success = ps.delete(id);
+            if (success) {
+                res.put("msg", "Ok");
+                res.put("data", "Eliminado correctamente");
+                return Response.ok(res).build();
+            } else {
+                res.put("msg", "Error");
+                res.put("data", "Persona no encontrada");
+                return Response.status(Status.NOT_FOUND).entity(res).build();
+            }
+        } catch (Exception e) {
+            System.out.println("Error en delete data" + e.toString());
+            res.put("msg", "Error");
+            res.put("data", e.toString());
+            return Response.status(Status.INTERNAL_SERVER_ERROR).entity(res).build();
         }
     }
 }
